@@ -1,12 +1,16 @@
 ## Objetivo
-Extrair informações de todos os imoveis a venda no site "www.vivareal.com.br" em uma cidade especifica.
+Extrair informações de todos os imoveis a venda no site [Vivareal](www.vivareal.com.br) em uma cidade especifica.
 <p align="center">
-  <img  src="prints/1_objetivo.png">
+  <img  src="prints/1site.png">
 </p>
-## Solução proposta
-Tecnologia: Python (requests, bs4, pandas, os)
 
-Arquitetura: A arquitetura do Web Scraper obedece etapas hierárquicas, onde primeiramente teremos um raspador que vai indicar quantos imoveis/card's existem para serem acessados, com isso, podemos  saber quantas página ainda podemos avançar, os raspadores de dados que vão operar dentro de cada imovel/card coletara os dados de decricao, endereco, area em metros quadrados, quantidade de quartos, quantidade de banheiros, quantidade de vagas, valor, link de acesso do imovel. É necessário definir o estado e cidade a ser pesquisada no link de requesição.
+## Solução proposta
+Tecnologia: Python stacks(requests, bs4, pandas, os e sys)
+
+Arquitetura: A arquitetura do Web Scraper obedece etapas hierárquicas, onde primeiramente teremos um raspador que vai indicar quantos imoveis/card's existem para serem acessados, com isso, o programa pode saber quantas páginas ainda pode avançar, os raspadores de dados que vão operar dentro de cada imovel/card coletara os dados de [decricao], [endereco], [area] em metros quadrados, [quantidade] de quartos, quantidade de [banheiros], quantidade de [vagas], [valor] e [link] unico do imovel. É necessário definir o estado e cidade a ser pesquisada no link de requesição.
+<p align="center">
+  <img  src="prints/2objetivo.png">
+</p>
 
 ## Resultados
 Problemas resolvidos: Durante a análise da página e de seu código HTML, foi constatado que não existe a informação do numero de páginas que determinada cidade possui, para resolver o problema, foi extraido o numero de imoveis/card's totais, com essa informação o programa avança trocando de pagina até que o tamanho do DataFrame seja igual a quantidade de imoveis/card's.
