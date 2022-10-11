@@ -18,7 +18,7 @@ A arquitetura do Web Scraper obedece etapas hierárquicas, onde primeiramente te
 <b>Problemas resolvidos:</b> Durante a análise da página e de seu código HTML, foi constatado que não existe a informação de quantidade de páginas com card's de imóveis na cidade filtrada, para resolver o problema, foi extraído o número de imóveis/card's totais, com essa informação o programa avança trocando de página até que o tamanho do DataFrame seja igual à quantidade de imóveis/card's.
 <p align="center">
   <img  src="prints/3quantidadeimoveis.png">
-  <b>Dados de quantidade de imóveis na cidade filtrada</b>
+  <b>Dado de quantidade de imóveis na cidade filtrada</b>
 </p>
 
 <b>Métricas de resultado:</b> É possível constatar o correto funcionamento do programa através do número de registros coletados, a quantidade de imóveis informada no site sempre confere com a quantidade de registros no arquivo '.csv' final, também, através de validação manual feita utilizando a cidade de araras como exemplo, é possível constatar a consistência dos dados coletados.
