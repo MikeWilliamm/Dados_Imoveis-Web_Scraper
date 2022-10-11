@@ -1,7 +1,7 @@
 ## Objetivo
 Extrair informações de todos os imoveis a venda no site "www.vivareal.com.br" em uma cidade especifica.
 <p align="center">
-  <img width="470" src="prints/objetivo.png">
+  <img width="470" src="prints/1_objetivo.png">
 </p>
 ## Solução proposta
 Tecnologia: Python (requests, bs4, pandas, os)
