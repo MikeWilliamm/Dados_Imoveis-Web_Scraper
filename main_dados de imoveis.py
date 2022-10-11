@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup as bs
 import pandas as pd
 import os
 import sys
+
+from sqlalchemy import true
 contador = 1
 url = f'https://www.vivareal.com.br/venda/sp/araras/apartamento_residencial/?pagina={contador}'
 retorno = requests.get(url)
@@ -13,7 +15,7 @@ qtd_houses = float(qtd_houses.replace('.',''))
 print(qtd_houses)
 #Criação de dataframe
 df = pd.DataFrame(columns=['decricao', 'endereco', 'area',
-                  'quarto', 'banheiro', 'vagas', 'valor', 'wlink'])
+                  'quarto', 'banheiro', 'vaga', 'valor', 'wlink'])
 #Em quanto a quantidade de casas(card's no site) for maior que a quantidade de linhas do DataFrame  faça:
 all_houses_extract = False
 while all_houses_extract == False:
@@ -50,16 +52,16 @@ while all_houses_extract == False:
         except:
             banheiro = None
         try:
-            vagas = house.find('li', {'class': 'js-property-detail-garages'}).span.text.strip()
+            vaga = house.find('li', {'class': 'js-property-detail-garages'}).span.text.strip()
         except:
-            vagas = None
+            vaga = None
         try:
             valor = house.find('div', {'class': 'js-property-card__price-small'}).find('p').text.strip().replace('R$', '')
             #Tratamento, caso valor estiver com o campo de'Preço abaixo do mercado'
             if valor.isnumeric() == False:
                 valor = valor.split(' ')[1]
         except:
-            valor = None
+            valor = 'Sob Consulta'
         try:
             wlink = 'https://www.vivareal.com.br' + house['href']
         except:
@@ -71,7 +73,7 @@ while all_houses_extract == False:
             area,
             quarto,
             banheiro,
-            vagas,
+            vaga,
             valor,
             wlink
         ]
