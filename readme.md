@@ -5,7 +5,7 @@ Extrair informações de todos os imoveis a venda no site [Vivareal](www.vivarea
 </p>
 
 ## Solução proposta
-Tecnologia: Python stacks(requests, bs4, pandas, os e sys)
+<b>Stacks:<b> Python com libs requests, bs4, pandas, os e sys.
 
 Arquitetura: A arquitetura do Web Scraper obedece etapas hierárquicas, onde primeiramente teremos um raspador que vai indicar quantos imoveis/card's existem para serem acessados, com isso, o programa pode saber quantas páginas ainda pode avançar, os raspadores de dados que vão operar dentro de cada imovel/card coletara os dados de [decricao], [endereco], [area] em metros quadrados, [quantidade] de quartos, quantidade de [banheiros], quantidade de [vagas], [valor] e [link] unico do imovel. É necessário definir o estado e cidade a ser pesquisada no link de requesição.
 <p align="center">
